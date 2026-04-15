@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaceSwap Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎭 FaceSwap Studio</h1>
+            <p>Production-grade local video face swapping</p>
+        </header>
+
+        <div class="upload-section">
+            <div class="upload-zone" id="videoUpload">
+                <div class="upload-icon">📹</div>
+                <p>Video</p>
+                <input type="file" id="videoInput" accept="video/*" hidden>
+            </div>
+            <div class="upload-zone" id="faceUpload">
+                <div class="upload-icon">🧑</div>
+                <p>Face Image</p>
+                <input type="file" id="faceInput" accept="image/*" hidden>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="processBtn" disabled>🚀 Start Processing</button>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <span id="progressText">0%</span>
+            </div>
+        </div>
+
+        <div class="preview-section">
+            <div class="preview-grid">
+                <div class="preview-item">
+                    <h3>Original</h3>
+                    <video id="originalPreview" controls muted></video>
+                </div>
+                <div class="preview-item">
+                    <h3>Result</h3>
+                    <video id="resultPreview" controls muted></video>
+                </div>
+            </div>
+        </div>
+
+        <div class="logs">
+            <h3>📋 Logs</h3>
+            <div id="logContainer"></div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
